@@ -1,0 +1,17 @@
+ {
+            "name": "test",
+            "text": "select * from iotEvent(cast(cast(value?,String),float)>10).win:time(60 sec) group by id? having count(*)>1",
+            "action": {
+                "type": "update",
+                "parameters": {
+                    "id": "${id}",
+                    "attributes": [
+                        {
+                            "name": "alert",
+                            "type": "string",
+                            "value": "true"
+                        }
+                    ]
+                }
+            }
+}
